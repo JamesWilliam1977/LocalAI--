@@ -1,0 +1,399 @@
+# Instincts generated from https://github.com/JamesWilliam1977/LocalAI--
+# Generated: 2026-05-01T14:08:31.053Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: LocalAI---commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/LocalAI--
+---
+
+# LocalAI   Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: feat, fix
+
+## Evidence
+
+- 4 commits analyzed
+- Detected conventional commit pattern
+- Examples: feat(backends/python): use tempfile.gettempdir() instead of hardcoded /tmp (#9629), fix(diffusers): drop compel from requirements to unblock pip resolver (#9632)
+
+---
+id: LocalAI---commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/LocalAI--
+---
+
+# LocalAI   Commit Length
+
+## Action
+
+Write moderate-length commit messages (~80 characters)
+
+## Evidence
+
+- Average commit message length: 80 chars
+- Based on 4 commits
+
+---
+id: LocalAI---naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/LocalAI--
+---
+
+# LocalAI   Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: LocalAI---import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/LocalAI--
+---
+
+# LocalAI   Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: LocalAI---export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/LocalAI--
+---
+
+# LocalAI   Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: LocalAI---test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/LocalAI--
+---
+
+# LocalAI   Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: LocalAI---workflow-backend-python-backend-update
+trigger: "when doing backend python backend update"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/LocalAI--
+---
+
+# LocalAI   Workflow Backend Python Backend Update
+
+## Action
+
+Follow the backend-python-backend-update workflow:
+1. Identify the pattern or configuration to be changed across backends.
+2. Edit backend.py files in each relevant backend/python/*/ directory to apply the change.
+3. Optionally update related requirements-*.txt files if dependencies are affected.
+4. Document or reference the change in the commit message.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: backend/python/*/backend.py, backend/python/*/requirements-*.txt
+
+---
+id: LocalAI---workflow-gallery-model-metadata-update
+trigger: "when doing gallery model metadata update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/LocalAI--
+---
+
+# LocalAI   Workflow Gallery Model Metadata Update
+
+## Action
+
+Follow the gallery-model-metadata-update workflow:
+1. Edit gallery/index.yaml to add or update model entries or tags.
+2. Include detailed descriptions and file references as needed.
+3. Commit with a message referencing the models and changes.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: gallery/index.yaml
+
+---
+id: LocalAI---workflow-importer-logic-and-test-update
+trigger: "when doing importer logic and test update"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/LocalAI--
+---
+
+# LocalAI   Workflow Importer Logic And Test Update
+
+## Action
+
+Follow the importer-logic-and-test-update workflow:
+1. Edit the importer implementation file (e.g., core/gallery/importers/*.go).
+2. Edit or add corresponding test file (e.g., core/gallery/importers/*_test.go) to cover the new or changed logic.
+3. Commit both implementation and test changes together.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: core/gallery/importers/*.go, core/gallery/importers/*_test.go
+
+---
+id: localai--coding-naming-convention
+trigger: "When creating or renaming files, functions, classes, or constants in Python code."
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/LocalAI--
+---
+
+# Localai  Coding Naming Convention
+
+## Action
+
+Use camelCase for files and functions, PascalCase for classes, and SCREAMING_SNAKE_CASE for constants.
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions
+- Consistent usage in backend/python/*/backend.py
+
+---
+id: localai--coding-import-style
+trigger: "When importing modules in Python files."
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/LocalAI--
+---
+
+# Localai  Coding Import Style
+
+## Action
+
+Use relative imports.
+
+## Evidence
+
+- Pattern in codeStyle.importStyle
+- Seen in backend/python/*/backend.py
+
+---
+id: localai--coding-export-style
+trigger: "When exporting symbols from Python modules."
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/LocalAI--
+---
+
+# Localai  Coding Export Style
+
+## Action
+
+Use named exports.
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle
+
+---
+id: localai--testing-importer-pattern
+trigger: "When updating or adding logic to a Go importer in core/gallery/importers."
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: JamesWilliam1977/LocalAI--
+---
+
+# Localai  Testing Importer Pattern
+
+## Action
+
+Edit or add a corresponding *_test.go file to cover the new or changed logic.
+
+## Evidence
+
+- importer-logic-and-test-update workflow
+- Pattern in core/gallery/importers/*.go and *_test.go
+
+---
+id: localai--testing-pair-commit
+trigger: "When committing changes to a Go importer implementation."
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: JamesWilliam1977/LocalAI--
+---
+
+# Localai  Testing Pair Commit
+
+## Action
+
+Commit both the implementation and its test changes together.
+
+## Evidence
+
+- importer-logic-and-test-update workflow
+- Example commits in workflow
+
+---
+id: localai--git-conventional-commits
+trigger: "When writing a commit message."
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: JamesWilliam1977/LocalAI--
+---
+
+# Localai  Git Conventional Commits
+
+## Action
+
+Use conventional commit prefixes (feat, fix) and include affected scope in parentheses, followed by a concise summary.
+
+## Evidence
+
+- Pattern in commits.prefixes
+- Examples: 'feat(backends/python): ...', 'fix(diffusers): ...'
+
+---
+id: localai--git-commit-length
+trigger: "When composing a commit message."
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: JamesWilliam1977/LocalAI--
+---
+
+# Localai  Git Commit Length
+
+## Action
+
+Keep the commit summary around 80 characters.
+
+## Evidence
+
+- Pattern in commits.averageLength
+- Example commit messages
+
+---
+id: localai--workflow-backend-python-update
+trigger: "When a cross-backend behavior or configuration needs to be updated in Python backends."
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: JamesWilliam1977/LocalAI--
+---
+
+# Localai  Workflow Backend Python Update
+
+## Action
+
+Edit backend/python/*/backend.py and related requirements-*.txt files to apply the change across all relevant backends, then document the change in the commit message.
+
+## Evidence
+
+- backend-python-backend-update workflow
+- Commits: 'feat(backends/python): use tempfile.gettempdir() instead of hardcoded /tmp (#9629)'
+
+---
+id: localai--workflow-gallery-model-metadata-update
+trigger: "When a new model is added to the gallery or existing model metadata/tags need updating."
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: JamesWilliam1977/LocalAI--
+---
+
+# Localai  Workflow Gallery Model Metadata Update
+
+## Action
+
+Edit gallery/index.yaml to add or update model entries or tags, including detailed descriptions as needed, and commit with a message referencing the models and changes.
+
+## Evidence
+
+- gallery-model-metadata-update workflow
+- Commit: 'Add tags to qwen3-vl-reranker and Qwen3-VL-Embedding to the gallery (#9628)'
+
+---
+id: localai--workflow-importer-logic-and-test-update
+trigger: "When importer logic needs to be changed or enhanced."
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: JamesWilliam1977/LocalAI--
+---
+
+# Localai  Workflow Importer Logic And Test Update
+
+## Action
+
+Edit core/gallery/importers/*.go and corresponding *_test.go files, committing both implementation and test changes together.
+
+## Evidence
+
+- importer-logic-and-test-update workflow
+- Pattern in core/gallery/importers/*.go and *_test.go
+
